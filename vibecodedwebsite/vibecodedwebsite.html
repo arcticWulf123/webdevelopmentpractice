@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jade Pinon — Developer & Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5f4f0;
+      --surface: #eeecea;
+      --ink: #1a1916;
+      --ink-muted: #7a7872;
+      --accent: #2d6a4f;
+      --accent-light: #d8f3dc;
+      --border: #dddbd6;
+      --white: #fafaf8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    /* ─── BACKGROUND ─── */
+    .bg-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .bg-canvas svg {
+      width: 100%; height: 100%;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      backdrop-filter: blur(12px);
+      background: rgba(245, 244, 240, 0.82);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.01em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ─── HERO ─── */
+    #hero {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 4rem;
+    }
+
+    .hero-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
+
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      opacity: 0;
+      animation: fadeUp 0.8s 0.35s forwards;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--ink-muted);
+      max-width: 480px;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.5s forwards;
+    }
+
+    .hero-cta {
+      margin-top: 2.5rem;
+      display: flex;
+      gap: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.65s forwards;
+    }
+
+    .btn {
+      padding: 0.75rem 1.75rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 3rem;
+      left: 4rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.85s forwards;
+    }
+
+    .hero-scroll::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--ink-muted);
+    }
+
+    /* ─── SECTIONS ─── */
+    section {
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 7rem 4rem;
+    }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── ABOUT ─── */
+    #about { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--ink-muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .about-text p strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .skill-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      padding: 0.35rem 0.8rem;
+      background: var(--accent-light);
+      color: var(--accent);
+      border-radius: 2px;
+    }
+
+    .about-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .stat-item {
+      padding: 2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .stat-number {
+      font-family: 'DM Serif Display', serif;
+      font-size: 3.5rem;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .stat-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-top: 0.5rem;
+    }
+
+    /* ─── PORTFOLIO ─── */
+    #portfolio { background: var(--bg); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      position: relative;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--accent);
+      transform: scaleY(0);
+      transition: transform 0.3s;
+      transform-origin: bottom;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    .project-card:hover::before { transform: scaleY(1); }
+
+    .project-number {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--ink-muted);
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .project-desc {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--ink-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .project-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.6rem;
+      background: var(--surface);
+      color: var(--ink-muted);
+      border-radius: 2px;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .project-link:hover { text-decoration: underline; }
+
+    .project-card.featured {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .project-card.featured .project-title {
+      font-size: 2rem;
+    }
+
+    .featured-visual {
+      background: var(--surface);
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+    }
+
+    .featured-visual svg {
+      opacity: 0.4;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--ink); }
+
+    #contact .section-label { color: #6eb88a; }
+    #contact .section-label::after { background: #2e2e2a; }
+
+    #contact .section-title { color: var(--white); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-intro {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #9a9890;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .contact-link-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .contact-link-item:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: var(--accent);
+    }
+
+    .contact-link-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-link-icon svg {
+      width: 16px; height: 16px;
+      fill: #6eb88a;
+    }
+
+    .contact-link-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #9a9890;
+      display: block;
+    }
+
+    .contact-link-value {
+      font-size: 0.9rem;
+      color: var(--white);
+      display: block;
+      margin-top: 0.15rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #9a9890;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 0.85rem 1rem;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+      border-radius: 0;
+      resize: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .form-group textarea { min-height: 130px; }
+
+    .btn-send {
+      align-self: flex-start;
+      background: var(--accent);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .btn-send:hover { opacity: 0.85; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      position: relative;
+      z-index: 1;
+      background: var(--ink);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer span {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      color: #5a5954;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s, transform 0.7s;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      nav { padding: 1.25rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+      #hero { padding: 0 1.5rem; }
+      .hero-scroll { left: 1.5rem; }
+      .section-inner { padding: 5rem 1.5rem; }
+      .about-grid,
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Background -->
+<div class="bg-canvas" aria-hidden="true">
+  <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <filter id="noise">
+        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+        <feColorMatrix type="saturate" values="0"/>
+        <feBlend in="SourceGraphic" mode="multiply"/>
+      </filter>
+      <radialGradient id="g1" cx="15%" cy="20%" r="55%">
+        <stop offset="0%" stop-color="#d8f3dc" stop-opacity="0.55"/>
+        <stop offset="100%" stop-color="#f5f4f0" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="g2" cx="85%" cy="75%" r="50%">
+        <stop offset="0%" stop-color="#b7e4c7" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="#f5f4f0" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#g1)"/>
+    <rect width="100%" height="100%" fill="url(#g2)"/>
+    <rect width="100%" height="100%" filter="url(#noise)" opacity="0.03"/>
+    <!-- subtle grid lines -->
+    <line x1="0" y1="33%" x2="100%" y2="33%" stroke="#1a1916" stroke-opacity="0.04" stroke-width="1"/>
+    <line x1="0" y1="66%" x2="100%" y2="66%" stroke="#1a1916" stroke-opacity="0.04" stroke-width="1"/>
+    <line x1="33%" y1="0" x2="33%" y2="100%" stroke="#1a1916" stroke-opacity="0.04" stroke-width="1"/>
+    <line x1="66%" y1="0" x2="66%" y2="100%" stroke="#1a1916" stroke-opacity="0.04" stroke-width="1"/>
+  </svg>
+</div>
+
+<!-- Nav -->
+<nav>
+  <a href="#hero" class="nav-logo">JRE Pinon</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section id="hero">
+  <p class="hero-tag">// Developer &amp; Engineer</p>
+  <h1 class="hero-name">Jade Roland<br><em>Eduard</em> Pinon</h1>
+  <p class="hero-sub">Building clean, purposeful software. Passionate about engineering well-crafted systems from the ground up.</p>
+  <div class="hero-cta">
+    <a href="#portfolio" class="btn btn-primary">View My Work</a>
+    <a href="#contact" class="btn btn-outline">Get in Touch</a>
+  </div>
+  <div class="hero-scroll">Scroll to explore</div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label reveal">01 — About</p>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <h2 class="section-title">Engineer by craft,<br>builder by <em style="font-family:'DM Serif Display',serif;font-style:italic;">nature</em></h2>
+        <p>Hi, I'm <strong>Jade</strong> — a developer and engineer focused on building reliable, scalable, and elegant software solutions. I take pride in writing code that is as clean as it is functional.</p>
+        <p>Whether it's architecting backends, designing APIs, or crafting seamless user experiences, I approach every problem with curiosity and precision.</p>
+        <div class="skills-list">
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">Docker</span>
+        </div>
+      </div>
+      <div class="about-stats reveal">
+        <div class="stat-item">
+          <div class="stat-number">3+</div>
+          <div class="stat-label">Years of Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">12</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">∞</div>
+          <div class="stat-label">Lines of Code Written</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio -->
+<section id="portfolio">
+  <div class="section-inner">
+    <p class="section-label reveal">02 — Selected Work</p>
+    <h2 class="section-title reveal">Projects I've built</h2>
+    <div class="projects-grid" style="margin-top:3rem;">
+
+      <div class="project-card featured reveal">
+        <div>
+          <p class="project-number">Featured / 01</p>
+          <h3 class="project-title">Smart Inventory Management System</h3>
+          <p class="project-desc">A full-stack web application for real-time inventory tracking. Designed with a RESTful API backend and a responsive dashboard for seamless stock management and reporting.</p>
+          <div class="project-tags">
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">Express</span>
+            <span class="project-tag">PostgreSQL</span>
+            <span class="project-tag">React</span>
+          </div>
+          <a href="#" class="project-link">View Project →</a>
+        </div>
+        <div class="featured-visual">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="25" height="25" stroke="#2d6a4f" stroke-width="2"/>
+            <rect x="45" y="10" width="25" height="25" stroke="#2d6a4f" stroke-width="2"/>
+            <rect x="10" y="45" width="25" height="25" stroke="#2d6a4f" stroke-width="2"/>
+            <rect x="45" y="45" width="25" height="25" stroke="#2d6a4f" stroke-width="2"/>
+            <line x1="37" y1="22" x2="43" y2="22" stroke="#2d6a4f" stroke-width="2"/>
+            <line x1="37" y1="57" x2="43" y2="57" stroke="#2d6a4f" stroke-width="2"/>
+            <line x1="22" y1="37" x2="22" y2="43" stroke="#2d6a4f" stroke-width="2"/>
+            <line x1="57" y1="37" x2="57" y2="43" stroke="#2d6a4f" stroke-width="2"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <p class="project-number">02</p>
+        <h3 class="project-title">CLI Task Runner</h3>
+        <p class="project-desc">A terminal-based productivity tool that automates repetitive dev workflows using configurable task pipelines and shell integrations.</p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Click</span>
+          <span class="project-tag">YAML</span>
+        </div>
+        <a href="#" class="project-link">View Project →</a>
+      </div>
+
+      <div class="project-card reveal">
+        <p class="project-number">03</p>
+        <h3 class="project-title">Auth Microservice</h3>
+        <p class="project-desc">Lightweight authentication service with JWT, OAuth2 support, and role-based access control. Deployable as a standalone Docker container.</p>
+        <div class="project-tags">
+          <span class="project-tag">Node.js</span>
+          <span class="project-tag">JWT</span>
+          <span class="project-tag">Docker</span>
+          <span class="project-tag">MongoDB</span>
+        </div>
+        <a href="#" class="project-link">View Project →</a>
+      </div>
+
+      <div class="project-card reveal">
+        <p class="project-number">04</p>
+        <h3 class="project-title">Data Dashboard</h3>
+        <p class="project-desc">Interactive analytics dashboard pulling from live APIs, featuring filterable charts, exportable reports, and responsive layout for multiple devices.</p>
+        <div class="project-tags">
+          <span class="project-tag">React</span>
+          <span class="project-tag">Chart.js</span>
+          <span class="project-tag">REST API</span>
+        </div>
+        <a href="#" class="project-link">View Project →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label reveal">03 — Contact</p>
+    <div class="contact-grid">
+      <div>
+        <h2 class="section-title reveal">Let's work<br>together</h2>
+        <p class="contact-intro reveal">Have a project in mind or just want to connect? I'm always open to interesting conversations and new opportunities.</p>
+        <div class="contact-links reveal">
+          <a href="mailto:jade@example.com" class="contact-link-item">
+            <div class="contact-link-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <div>
+              <span class="contact-link-label">Email</span>
+              <span class="contact-link-value">jade@example.com</span>
+            </div>
+          </a>
+          <a href="https://github.com/" target="_blank" class="contact-link-item">
+            <div class="contact-link-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </div>
+            <div>
+              <span class="contact-link-label">GitHub</span>
+              <span class="contact-link-value">github.com/jadepinon</span>
+            </div>
+          </a>
+          <a href="https://linkedin.com/" target="_blank" class="contact-link-item">
+            <div class="contact-link-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            </div>
+            <div>
+              <span class="contact-link-label">LinkedIn</span>
+              <span class="contact-link-value">linkedin.com/in/jadepinon</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form reveal">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your name"/>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="your@email.com"/>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Tell me about your project..."></textarea>
+        </div>
+        <button class="btn-send" onclick="handleSend()">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <span>© 2026 Jade Roland Eduard C. Pinon</span>
+  <span>Built with care — Philippines 🇵🇭</span>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+
+  // Stagger children in grids
+  document.querySelectorAll('.projects-grid .reveal, .about-stats .stat-item').forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.1}s`;
+  });
+
+  function handleSend() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const msg = document.getElementById('message').value.trim();
+    if (!name || !email || !msg) {
+      alert('Please fill in all fields.');
+      return;
+    }
+    alert(`Thanks, ${name}! Your message has been received.`);
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('message').value = '';
+  }
+</script>
+</body>
+</html>
