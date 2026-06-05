@@ -24,6 +24,10 @@ function twoSum(target) { //target is 17
     }
 }
 
+function reverseString (string) {
+    let chars = string.split("")
+}
+
 console.log(factorial(5));
 console.log(square(5));
 console.log(twoSum(17));
