@@ -1,3 +1,12 @@
 ## Information about this Repository
+Each folder contains a recreation of a specific website or webpage. These projects are created solely for educational and practice purposes and are not intended to be exact copies or commercial products.
 
-This is where I will be uploading everything webdevelopment related that I practiced. For now some of it is really ugly but I am still trying to learn, check it out from time to time!
+Examples of what may be included:
+
+* Landing pages
+* Login and registration forms
+* E-commerce interfaces
+* Dashboard layouts
+* Portfolio websites
+* Product pages
+* Navigation systems and UI components
