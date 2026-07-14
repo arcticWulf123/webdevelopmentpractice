@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Inception",
+        "genre": "Sci-Fi",
+        "year": 2010
+    },
+    {
+        "id": 2,
+        "title": "The Notebook",
+        "genre": "Romance",
+        "year": 2004
+    },
+    {
+        "id": 3,
+        "title": "Interstellar",
+        "genre": "Sci-Fi",
+        "year": 2014
+    },
+    {
+        "id": 4,
+        "title": "Get Out",
+        "genre": "Horror",
+        "year": 2017
+    }
+]
