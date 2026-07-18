@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rose's Bakery</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-logo">Rose's Bakery</a>
+    <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact" class="btn-nav">Visit Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Handmade with love since 2018</p>
+      <h1>Freshly Baked<br>Every Morning</h1>
+      <p class="hero-sub">Artisan breads, pastries, and cakes crafted from scratch using locally sourced ingredients.</p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn btn-primary">View Our Menu</a>
+        <a href="#contact" class="btn btn-outline">Find Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-img">
+        <div class="about-img-placeholder">
+          <span>Add your photo<br>here</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-tag">Our Story</p>
+        <h2>Baked From the Heart</h2>
+        <p>Rose's Bakery started in a tiny kitchen with a passion for honest, wholesome baking. What began as weekend farmers' market stalls grew into a neighborhood staple.</p>
+        <p>Every loaf, cake, and pastry is made fresh each morning with simple ingredients - real butter, organic flour, free-range eggs, and seasonal fruits. No shortcuts, no preservatives.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <strong>7+</strong>
+            <span>Years Baking</span>
+          </div>
+          <div class="stat">
+            <strong>50+</strong>
+            <span>Recipes</span>
+          </div>
+          <div class="stat">
+            <strong>3k+</strong>
+            <span>Happy Customers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <p class="section-tag center">What We Bake</p>
+      <h2 class="center">Our Menu</h2>
+      <div class="menu-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="bread">Breads</button>
+        <button class="filter-btn" data-filter="pastry">Pastries</button>
+        <button class="filter-btn" data-filter="cake">Cakes</button>
+        <button class="filter-btn" data-filter="seasonal">Seasonal</button>
+      </div>
+      <div class="menu-grid">
+
+        <div class="menu-card" data-category="bread">
+          <div class="menu-card-img placeholder-img"><span>Bread</span></div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3>Sourdough Loaf</h3>
+              <span class="price">$7.50</span>
+            </div>
+            <p>48-hour fermented sourdough with a crispy crust and open crumb.</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="bread">
+          <div class="menu-card-img placeholder-img"><span>Bread</span></div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3>Olive Rosemary Focaccia</h3>
+              <span class="price">$6.00</span>
+            </div>
+            <p>Soft, airy focaccia loaded with kalamata olives and fresh rosemary.</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="pastry">
+          <div class="menu-card-img placeholder-img"><span>Pastry</span></div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3>Butter Croissant</h3>
+              <span class="price">$4.50</span>
+            </div>
+            <p>Classic French-style croissant with 27 layers of flaky, golden pastry.</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="pastry">
+          <div class="menu-card-img placeholder-img"><span>Pastry</span></div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3>Pain au Chocolat</h3>
+              <span class="price">$5.00</span>
+            </div>
+            <p>Buttery croissant dough wrapped around two bars of Belgian dark chocolate.</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="cake">
+          <div class="menu-card-img placeholder-img"><span>Cake</span></div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3>Carrot Cake</h3>
+              <span class="price">$36.00</span>
+            </div>
+            <p>Moist spiced carrot cake with cream cheese frosting. Serves 8-10.</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="cake">
+          <div class="menu-card-img placeholder-img"><span>Cake</span></div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3>Lemon Olive Oil Cake</h3>
+              <span class="price">$32.00</span>
+            </div>
+            <p>Bright and tender cake made with extra virgin olive oil and fresh lemons.</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="seasonal">
+          <div class="menu-card-img placeholder-img"><span>Seasonal</span></div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3>Peach Galette</h3>
+              <span class="price">$28.00</span>
+            </div>
+            <p>Rustic free-form tart with juicy summer peaches and vanilla bean custard.</p>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="bread">
+          <div class="menu-card-img placeholder-img"><span>Bread</span></div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h3>Whole Wheat Batard</h3>
+              <span class="price">$6.50</span>
+            </div>
+            <p>Nutty and hearty whole wheat loaf perfect for sandwiches or toast.</p>
+          </div>
+        </div>
+
+      </div>
+      <p class="menu-note">Custom cake orders available - <a href="#contact">contact us</a> for details.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <p class="section-tag center">Fresh Out of the Oven</p>
+      <h2 class="center">Gallery</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><div class="gallery-placeholder"><span>Add photo</span></div></div>
+      <div class="gallery-item"><div class="gallery-placeholder"><span>Add photo</span></div></div>
+      <div class="gallery-item"><div class="gallery-placeholder"><span>Add photo</span></div></div>
+      <div class="gallery-item"><div class="gallery-placeholder"><span>Add photo</span></div></div>
+      <div class="gallery-item"><div class="gallery-placeholder"><span>Add photo</span></div></div>
+      <div class="gallery-item"><div class="gallery-placeholder"><span>Add photo</span></div></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <p class="section-tag center">Kind Words</p>
+      <h2 class="center">What People Say</h2>
+      <div class="testimonial-grid">
+
+        <div class="testimonial-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"The sourdough here ruined all other bread for me. I genuinely can't go back. The crust, the tang, the texture - perfection."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">J</div>
+            <div>
+              <strong>Jamie L.</strong>
+              <span>Regular since 2020</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Rose made my wedding cake and it was absolutely beautiful AND delicious. Our guests are still talking about it months later."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">S</div>
+            <div>
+              <strong>Sarah M.</strong>
+              <span>Wedding client</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"I stop by every Saturday morning for croissants and coffee. It's the highlight of my weekend. True neighborhood gem."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">D</div>
+            <div>
+              <strong>David K.</strong>
+              <span>Weekend regular</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / HOURS -->
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <p class="section-tag">Come Say Hi</p>
+        <h2>Visit Us</h2>
+        <div class="contact-details">
+          <div class="contact-item">
+            <h4>Address</h4>
+            <p>123 Maple Street<br>Brooklyn, NY 11201</p>
+          </div>
+          <div class="contact-item">
+            <h4>Hours</h4>
+            <p>Mon - Fri: 7am - 6pm<br>Sat - Sun: 8am - 4pm</p>
+          </div>
+          <div class="contact-item">
+            <h4>Contact</h4>
+            <p>hello@rosesbakery.com<br>(718) 555-0123</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <h3>Send a Message</h3>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="general">General Inquiry</option>
+              <option value="custom-cake">Custom Cake Order</option>
+              <option value="catering">Catering</option>
+              <option value="wholesale">Wholesale</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell us what you need..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">Rose's Bakery</a>
+        <p>Artisan baking in the heart of Brooklyn.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Along</h4>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Facebook">Facebook</a>
+          <a href="#" aria-label="TikTok">TikTok</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Rose's Bakery. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
