@@ -1,0 +1,46 @@
+nav div {
+  background: #083d77;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+nav .icon {
+  display: inline-flex;
+}
+nav .icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+main {
+  display: flex;
+  background: #ebebd3;
+}
+main .header-1 {
+  color: #083d77;
+}
+main .header-2 {
+  color: #ee964b;
+}
+main p {
+  color: #5a6e8a;
+}
+main .take-quiz {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #083d77;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+main .take-quiz svg {
+  width: 18px;
+  height: 18px;
+}
+main .quiz-list {
+  color: #083d77;
+  font-weight: 600;
+}/*# sourceMappingURL=style.css.map */
