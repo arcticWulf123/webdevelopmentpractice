@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 nav div {
   background: #083d77;
   color: white;
@@ -16,16 +22,20 @@ nav .icon svg {
 
 main {
   display: flex;
+  flex-direction: column;
   background: #ebebd3;
 }
 main .header-1 {
   color: #083d77;
+  font-family: "Space Grotesk";
 }
 main .header-2 {
   color: #ee964b;
+  font-family: "Space Grotesk";
 }
 main p {
   color: #5a6e8a;
+  font-family: "Inter";
 }
 main .take-quiz {
   display: inline-flex;
@@ -43,4 +53,10 @@ main .take-quiz svg {
 main .quiz-list {
   color: #083d77;
   font-weight: 600;
+}
+main .dashboard {
+  background: #ebebd3;
+}
+main .dashboard .title {
+  font-family: "Space Grotesk";
 }/*# sourceMappingURL=style.css.map */
