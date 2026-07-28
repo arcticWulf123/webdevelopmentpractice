@@ -3,11 +3,49 @@
   flex-direction: row;
   justify-content: space-around;
   list-style-type: none;
-  margin-bottom: 20%;
-  margin-top: 20%;
+  margin: 0;
+  padding: 16px 0;
+  background: var(--accent-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav li {
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.nav li:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
 }
 
 .input {
-  background: white;
-  color: black;
+  background: var(--code-bg);
+  color: var(--text-h);
+  border: 1px solid var(--border);
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
+
+.input:hover {
+  border-color: var(--accent);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+.header {
+  font-weight: bold;
+  color: red;
+  transition: color 0.2s;
+}
+
+.header:hover {
+  color: var(--accent);
+}
+

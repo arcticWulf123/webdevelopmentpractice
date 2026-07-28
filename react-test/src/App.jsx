@@ -1,6 +1,6 @@
 import "./App.css";
 
-const name = "Jade";
+let name = "Jade";
 function App() {
   return (
     // <div>
@@ -10,13 +10,14 @@ function App() {
     // </div>
     <div>
       <Header />
+      <Goodbye name="Jade"/>
       <Main />
     </div>
   );
 }
 
 function Goodbye(props) {
-  return <h1>Goodbye {props.name}</h1>;
+  return <h1 className="header">Goodbye {props.name}</h1>;2
 }
 
 export default App;
