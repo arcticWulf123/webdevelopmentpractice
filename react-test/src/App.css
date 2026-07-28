@@ -1,0 +1,13 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style-type: none;
+  margin-bottom: 20%;
+  margin-top: 20%;
+}
+
+.input {
+  background: white;
+  color: black;
+}
