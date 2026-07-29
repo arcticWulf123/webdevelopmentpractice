@@ -12,6 +12,7 @@ function App() {
       <Header />
       <Goodbye name="Jade"/>
       <Main />
+      <Footer />
     </div>
   );
 }
@@ -48,6 +49,16 @@ function Main() {
       <input type="text" className="input" />
     </div>
   );
+}
+
+function Footer() {
+  return (
+    <footer>
+      <nav className="footer">
+        <span>Copywrite lol 2006</span>
+      </nav>
+    </footer>
+  )
 }
 /* 
 1. Components are reusable in React
