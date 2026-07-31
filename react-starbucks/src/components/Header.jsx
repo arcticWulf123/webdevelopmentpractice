@@ -1,25 +1,64 @@
 import Link from "./Links";
 import Button from "./Button";
-function Header () {
-    return (
-        <nav style={{
-            display: 'flex',
-            justifyContent: 'space-between'
+import Logo from "./Logo";
+function Header() {
+  return (
+    <nav
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        backgroundColor: 'white',
+        padding: '30px'
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "30px",
+        }}
+      >
+        <Logo />
+        <div
+          style={{
+            display: "flex",
+            gap: "15px",
+          }}
+        >
+          <Link text="menu"></Link>
+          <Link text="merchandise"></Link>
+          <Link text="rewards"></Link>
+        </div>
+      </div>
+      <div
+      style={{
+          display: "flex",
+          gap: "15px",
         }}>
-            <div style={{
-                display:"flex",
-                gap: '10px'
-            }}>
-                <Link text="menu"></Link>
-                <Link text="merchandise"></Link>
-                <Link text="rewards"></Link>
-            </div>
-            <div>
-                <Button color="black" background="white" borderColor="white" text="Find a Store"/>
-                <Button color="black" background="white" borderColor="black" text="Sign In"/>
-                <Button color="white" background="black" borderColor="white" text="Join Now"/>
-            </div>
-        </nav>
-    );
+        <Button
+          color="black"
+          background="white"
+          borderColor="white"
+          fontWeight="bold"
+          text="Find a Store"
+        />
+        <Button
+          color="black"
+          background="white"
+          borderColor="black"
+          fontWeight="bold"
+          text="Sign In"
+        />
+        <Button
+          color="white"
+          background="black"
+          borderColor="white"
+          fontWeight="bold"
+          text="Join Now"
+        />
+      </div>
+    </nav>
+  );
 }
 export default Header;

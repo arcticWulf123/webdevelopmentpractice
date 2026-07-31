@@ -6,7 +6,8 @@ function Link(props) {
         textTransform: "uppercase",
         color: "black",
         fontWeight: "bold",
-        textDecoration: "none"
+        textDecoration: "none",
+        fontSize: "small"
       }}
     >
       {props.text}

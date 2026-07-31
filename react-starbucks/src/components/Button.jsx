@@ -8,11 +8,11 @@ function Button(props) {
         background: props.background,
         textDecoration: "none",
         fontSize: "small",
-        fontWeight: 500,
         borderWidth: '1px',
         borderStyle: 'solid',
         borderColor: props.borderColor,
-        padding: '8px 12px 8px 12px' /*  Top Right Bottom Left*/
+        padding: '8px 12px 8px 12px', /*  Top Right Bottom Left*/
+        fontWeight: props.fontWeight
       }}
     >
       {props.text}
