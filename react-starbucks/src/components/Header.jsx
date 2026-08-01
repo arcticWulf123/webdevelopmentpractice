@@ -8,8 +8,8 @@ function Header() {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        backgroundColor: 'white',
-        padding: '30px'
+        backgroundColor: "white",
+        padding: "30px",
       }}
     >
       <div
@@ -32,10 +32,11 @@ function Header() {
         </div>
       </div>
       <div
-      style={{
+        style={{
           display: "flex",
           gap: "15px",
-        }}>
+        }}
+      >
         <Button
           color="black"
           background="white"
