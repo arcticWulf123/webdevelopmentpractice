@@ -7,7 +7,13 @@ function Hero() {
         alt=""
         className="img"
       />
-      <Button color='green' background='none' borderColor='green' fontWeight='bold' text='Discover the Flavors'/>
+      <Button
+        color="green"
+        background="none"
+        borderColor="green"
+        fontWeight="bold"
+        text="Discover the Flavors"
+      />
     </>
   );
 }

@@ -1,10 +1,10 @@
 import Button from "./Button";
-function Card () {
+function Card (props) {
     return (
         <div>
             <img src="" alt="" />
-            <h1></h1>
-            <p></p>
+            <h1>{props.header}</h1>
+            <p>{props.description}</p>
             <Button/>
         </div>
     )   
