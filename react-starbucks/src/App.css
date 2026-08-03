@@ -60,6 +60,18 @@ ol {
   isolation: isolate;
 }
 
-.cards {
+.hero {
     display: flex;
+    flex-direction: column;
 }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  gap: 40px;
+}
+
+.card-item {
+  text-align: center;
+} 

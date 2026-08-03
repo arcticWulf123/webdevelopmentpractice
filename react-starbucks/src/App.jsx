@@ -2,10 +2,13 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from './assets/vite.svg'
 // import heroImg from './assets/hero.png'
-// import './App.css'
+import './App.css'
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Button from "./components/Button";
+
+/*TODO: 
+1. The button should be inside the hero image, bottom center*/
 function App() {
   return (
     <>
@@ -14,13 +17,13 @@ function App() {
         <Hero />
       </div>
       <div className="cards">
-        <div>
+        <div className="card-item">
           <img
             src="src\assets\202IcKWzEVF0l6AitZbkDkltWyiTY3tWIfmYe8ku.jpg"
             alt=""
           />
           <h1>Summer's Best Bites</h1>
-          <p>Light, crave-able, and made to pair with every summer sip</p>
+          <p>Light, craveable, and made to pair with every summer sip</p>
           <Button
             color="green"
             background="none"
@@ -29,7 +32,7 @@ function App() {
             text="Discover More"
           />
         </div>
-        <div>
+        <div className="card-item">
           <img
             src="src\assets\VrLAsYNx1zQQICVTBtquL2iXNyUrvWqwc4IPFNyP.jpg"
             alt=""
@@ -44,7 +47,7 @@ function App() {
             text="Explore"
           />
         </div>
-        <div>
+        <div className="card-item">
           <img
             src="src\assets\6DKSJeTaGzO7KNVhSyVuWYKkgPERWh5DELCtkY0h.jpg"
             alt=""
