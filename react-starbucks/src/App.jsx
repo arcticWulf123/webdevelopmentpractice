@@ -2,10 +2,11 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from './assets/vite.svg'
 // import heroImg from './assets/hero.png'
-import './App.css'
+import "./App.css";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Button from "./components/Button";
+import Footer from "./components/Footer";
 
 /*TODO: 
 1. The button should be inside the hero image, bottom center*/
@@ -13,7 +14,7 @@ function App() {
   return (
     <>
       <div>
-        <Header/>
+        <Header />
         <Hero />
       </div>
       <div className="cards">
@@ -63,6 +64,7 @@ function App() {
           />
         </div>
       </div>
+      <Footer />
     </>
   );
 }
