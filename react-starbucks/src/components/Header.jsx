@@ -10,6 +10,9 @@ function Header() {
         alignItems: "center",
         backgroundColor: "white",
         padding: "30px",
+        position: "sticky",
+        top: 0,
+        zIndex: 100
       }}
     >
       <div

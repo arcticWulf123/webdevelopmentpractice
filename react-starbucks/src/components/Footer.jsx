@@ -5,10 +5,10 @@ function Footer() {
         className="container"
         style={{
           display: "flex",
-          justifyContent: "space-around",
+          justifyContent: "space-between",
           padding: "30px",
           marginTop: "20px",
-          border: "1px solid grey"
+          border: "1px solid grey",
         }}
       >
         <div
@@ -66,7 +66,7 @@ function Footer() {
           <a href=""></a>
           <a href=""></a>
         </div>
-        <div> 
+        <div>
           <a href="">
             <img src="" alt="" />
           </a>
@@ -79,6 +79,30 @@ function Footer() {
           <a href="">
             <img src="" alt="" />
           </a>
+        </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          padding: "30px"
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            gap: "5px",
+          }}
+        >
+          <a href="">Web Accesibility</a>
+          <a href="">Privacy Policy</a>
+          <a href="">Terms of Use</a>
+          <a href="">Site Map</a>
+          <a href="">Cookie Preferences</a>
+        </div>
+        <div style={{}}>
+          <p>© 2022 Starbucks Coffee Company. All rights reserved.</p>
         </div>
       </div>
     </>
