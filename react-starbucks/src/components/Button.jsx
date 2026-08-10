@@ -2,6 +2,7 @@ function Button(props) {
   return (
     <a
       href="#"
+      className={props.className}
       style={{
         color: props.color,
         borderRadius: 9999,
