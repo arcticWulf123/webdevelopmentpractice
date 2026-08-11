@@ -158,3 +158,11 @@ ol {
 .footer-link:hover {
   color: rgb(117, 116, 116);
 }
+
+.second-footer-links {
+  color: black;
+}
+
+.second-footerlinks:hover {
+  color: rgb(117, 116, 116);
+}

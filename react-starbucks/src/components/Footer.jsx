@@ -19,10 +19,18 @@ function Footer() {
           }}
         >
           <h1>About Us</h1>
-          <a href="" className="footer-link">Our Company</a>
-          <a href="" className="footer-link">Stories and News</a>
-          <a href="" className="footer-link">Customer Service</a>
-          <a href="" className="footer-link">Careers</a>
+          <a href="" className="footer-link">
+            Our Company
+          </a>
+          <a href="" className="footer-link">
+            Stories and News
+          </a>
+          <a href="" className="footer-link">
+            Customer Service
+          </a>
+          <a href="" className="footer-link">
+            Careers
+          </a>
         </div>
         <div
           style={{
@@ -32,10 +40,18 @@ function Footer() {
           }}
         >
           <h1>Order Online</h1>
-          <a href="" className="footer-link">Order on the App</a>
-          <a href="" className="footer-link">Delivery</a>
-          <a href="" className="footer-link">Send eGifts</a>
-          <a href="" className="footer-link">Grab Partnership</a>
+          <a href="" className="footer-link">
+            Order on the App
+          </a>
+          <a href="" className="footer-link">
+            Delivery
+          </a>
+          <a href="" className="footer-link">
+            Send eGifts
+          </a>
+          <a href="" className="footer-link">
+            Grab Partnership
+          </a>
         </div>
         <div
           style={{
@@ -45,10 +61,18 @@ function Footer() {
           }}
         >
           <h1>Rewards</h1>
-          <a href="" className="footer-link">My Account</a>
-          <a href="" className="footer-link">View Transactions</a>
-          <a href="" className="footer-link">Reload</a>
-          <a href="" className="footer-link">FAQs</a>
+          <a href="" className="footer-link">
+            My Account
+          </a>
+          <a href="" className="footer-link">
+            View Transactions
+          </a>
+          <a href="" className="footer-link">
+            Reload
+          </a>
+          <a href="" className="footer-link">
+            FAQs
+          </a>
         </div>
         <div>
           <h1>Social Impact</h1>
@@ -83,11 +107,21 @@ function Footer() {
             gap: "15px",
           }}
         >
-          <a href="">Web Accesibility</a>
-          <a href="">Privacy Policy</a>
-          <a href="">Terms of Use</a>
-          <a href="">Site Map</a>
-          <a href="">Cookie Preferences</a>
+          <a href="" className="second-footer-links">
+            Web Accessibility
+          </a>
+          <a href="" className="second-footer-links">
+            Privacy Policy
+          </a>
+          <a href="" className="second-footer-links">
+            Terms of Use
+          </a>
+          <a href="" className="second-footer-links">
+            Site Map
+          </a>
+          <a href="" className="second-footer-links">
+            Cookie Preferences
+          </a>
         </div>
         <div style={{}}>
           <p>© 2022 Starbucks Coffee Company. All rights reserved.</p>
