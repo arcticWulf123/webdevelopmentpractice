@@ -52,47 +52,35 @@ function Footer() {
         </div>
         <div>
           <h1>Social Impact</h1>
-          <a href=""></a>
-          <a href=""></a>
-          <a href=""></a>
-          <a href=""></a>
-          <a href=""></a>
         </div>
         <div>
           <h1>Promotions</h1>
-          <a href=""></a>
-          <a href=""></a>
-          <a href=""></a>
-          <a href=""></a>
-          <a href=""></a>
         </div>
-        <div>
-          <a href="">
-            <img src="" alt="" />
-          </a>
-          <a href="">
-            <img src="" alt="" />
-          </a>
-          <a href="">
-            <img src="" alt="" />
-          </a>
-          <a href="">
-            <img src="" alt="" />
-          </a>
+        <div
+          style={{
+            writingMode: "vertical-rl",
+            fontWeight: "bold",
+            fontSize: "1.5rem",
+            color: "black",
+            letterSpacing: "2px",
+            transform: "rotate(180deg)",
+          }}
+        >
+          STARBUCKS®
         </div>
       </div>
-      <div
+      <footer
         style={{
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
-          padding: "30px"
+          padding: "30px",
         }}
       >
         <div
           style={{
             display: "flex",
-            gap: "5px",
+            gap: "15px",
           }}
         >
           <a href="">Web Accesibility</a>
@@ -104,7 +92,7 @@ function Footer() {
         <div style={{}}>
           <p>© 2022 Starbucks Coffee Company. All rights reserved.</p>
         </div>
-      </div>
+      </footer>
     </>
   );
 }
