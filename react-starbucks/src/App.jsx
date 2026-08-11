@@ -8,8 +8,6 @@ import Hero from "./components/Hero";
 import Button from "./components/Button";
 import Footer from "./components/Footer";
 
-/*TODO: 
-1. The button should be inside the hero image, bottom center*/
 function App() {
   return (
     <>
@@ -26,9 +24,9 @@ function App() {
           <h1>Summer's Best Bites</h1>
           <p>Light, craveable, and made to pair with every summer sip</p>
           <Button
-            color="green"
+            color="#00582f"
             background="none"
-            borderColor="green"
+            borderColor="#00582f"
             fontWeight="bold"
             text="Discover More"
           />
@@ -41,9 +39,9 @@ function App() {
           <h1>Your Summer, In a Cup</h1>
           <p>Cool, refreshing favorites for every carefree moment</p>
           <Button
-            color="green"
+            color="#00582f"
             background="none"
-            borderColor="green"
+            borderColor="#00582f"
             fontWeight="bold"
             text="Explore"
           />
@@ -56,9 +54,9 @@ function App() {
           <h1>Taste Like Summer</h1>
           <p>Fun, fruity finds to carry you through the season</p>
           <Button
-            color="green"
+            color="#00582f"
             background="none"
-            borderColor="green"
+            borderColor="#00582f"
             fontWeight="bold"
             text="See More"
           />

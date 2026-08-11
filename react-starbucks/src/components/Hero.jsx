@@ -9,7 +9,6 @@ function Hero() {
   5. Add social media links along with its hover effects
   6. Add hover effects to footer links
   7. Add more gaps to the footer links
-
   */
   return (
     <div className="hero">
@@ -19,9 +18,9 @@ function Hero() {
         className="img"
       />
       <Button
-        color="green"
+        color="#00582f"
         background="none"
-        borderColor="green"
+        borderColor="#00582f"
         fontWeight="bold"
         text="Discover the Flavors"
         className="hero-button"
