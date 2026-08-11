@@ -19,10 +19,10 @@ function Footer() {
           }}
         >
           <h1>About Us</h1>
-          <a href="">Our Company</a>
-          <a href="">Stories and News</a>
-          <a href="">Customer Service</a>
-          <a href="">Careers</a>
+          <a href="" className="footer-link">Our Company</a>
+          <a href="" className="footer-link">Stories and News</a>
+          <a href="" className="footer-link">Customer Service</a>
+          <a href="" className="footer-link">Careers</a>
         </div>
         <div
           style={{
@@ -32,10 +32,10 @@ function Footer() {
           }}
         >
           <h1>Order Online</h1>
-          <a href="">Order on the App</a>
-          <a href="">Delivery</a>
-          <a href="">Send eGifts</a>
-          <a href="">Grab Partnership</a>
+          <a href="" className="footer-link">Order on the App</a>
+          <a href="" className="footer-link">Delivery</a>
+          <a href="" className="footer-link">Send eGifts</a>
+          <a href="" className="footer-link">Grab Partnership</a>
         </div>
         <div
           style={{
@@ -45,10 +45,10 @@ function Footer() {
           }}
         >
           <h1>Rewards</h1>
-          <a href="">My Account</a>
-          <a href="">View Transactions</a>
-          <a href="">Reload</a>
-          <a href="">FAQs</a>
+          <a href="" className="footer-link">My Account</a>
+          <a href="" className="footer-link">View Transactions</a>
+          <a href="" className="footer-link">Reload</a>
+          <a href="" className="footer-link">FAQs</a>
         </div>
         <div>
           <h1>Social Impact</h1>

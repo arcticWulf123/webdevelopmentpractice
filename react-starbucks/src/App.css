@@ -117,3 +117,17 @@ ol {
 .card-item {
   text-align: center;
 }
+
+.card-item h1 {
+  margin-top: 15px;
+}
+
+.card-item p {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.card-item a {
+  display: inline-block;
+  margin-top: 15px;
+}

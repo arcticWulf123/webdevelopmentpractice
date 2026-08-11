@@ -20,6 +20,7 @@ function Header() {
           display: "flex",
           alignItems: "center",
           gap: "30px",
+          marginLeft: "120px",
         }}
       >
         <Logo />
@@ -38,6 +39,7 @@ function Header() {
         style={{
           display: "flex",
           gap: "15px",
+          marginRight: "120px",
         }}
       >
         <Button
