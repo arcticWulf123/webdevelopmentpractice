@@ -2,9 +2,9 @@ function Link(props) {
   return (
     <a
       href="#"
+      className={props.className}
       style={{
         textTransform: "uppercase",
-        color: "black",
         fontWeight: "bold",
         textDecoration: "none",
         fontSize: "small"

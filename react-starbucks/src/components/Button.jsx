@@ -12,11 +12,10 @@ function Button(props) {
         borderWidth: '1px',
         borderStyle: 'solid',
         borderColor: props.borderColor,
-        // padding: '8px 12px 8px 12px',
         paddingTop: '7px',
         paddingBottom: '7px',
         paddingLeft: '16px',
-        paddingRight: '16px', /*  Top Right Bottom Left*/
+        paddingRight: '16px', 
         fontWeight: props.fontWeight
       }}
     >

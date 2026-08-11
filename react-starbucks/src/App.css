@@ -45,6 +45,20 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+.link {
+  color: black;
+}
+.header-link {
+  color: black;
+}
+
+.header-link:hover {
+  color: #00582f;
+}
+
+.link:hover {
+  color: #00582f;
+}
 
 h1,
 h2,
@@ -54,6 +68,15 @@ h5,
 h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+h3 {
+  font-size: 1.125rem;
 }
 
 a {
@@ -72,9 +95,9 @@ ol {
 }
 
 .hero {
-    display: flex;
-    flex-direction: column;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .hero-button {
@@ -93,4 +116,4 @@ ol {
 
 .card-item {
   text-align: center;
-} 
+}

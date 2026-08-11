@@ -12,7 +12,7 @@ function Header() {
         padding: "30px",
         position: "sticky",
         top: 0,
-        zIndex: 100
+        zIndex: 100,
       }}
     >
       <div
@@ -29,9 +29,9 @@ function Header() {
             gap: "15px",
           }}
         >
-          <Link text="menu"></Link>
-          <Link text="merchandise"></Link>
-          <Link text="rewards"></Link>
+          <Link text="menu" className="header-link"></Link>
+          <Link text="merchandise" className="header-link"></Link>
+          <Link text="rewards" className="header-link"></Link>
         </div>
       </div>
       <div
@@ -41,22 +41,22 @@ function Header() {
         }}
       >
         <Button
-          color="black"
           background="white"
           borderColor="white"
           fontWeight="bold"
           text="Find a Store"
+          className="link"
         />
         <Button
+          className="signin-button"
           color="black"
-          background="white"
           borderColor="black"
           fontWeight="bold"
           text="Sign In"
         />
         <Button
+          className="join-button"
           color="white"
-          background="black"
           borderColor="white"
           fontWeight="bold"
           text="Join Now"
