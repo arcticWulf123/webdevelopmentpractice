@@ -146,7 +146,7 @@ function Footer() {
             Cookie Preferences
           </a>
         </div>
-        <div style={{}}>
+        <div>
           <p>© 2022 Starbucks Coffee Company. All rights reserved.</p>
         </div>
       </footer>
