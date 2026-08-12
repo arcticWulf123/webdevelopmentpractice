@@ -6,19 +6,31 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-      <>
-        <Header />
-        <div>
-          <Hero />
-        </div>
+    <>
+      <Header />
+      <div>
+        <Hero />
+      </div>
       <div className="cards">
         <div className="card-item">
           <img
             src="src\assets\202IcKWzEVF0l6AitZbkDkltWyiTY3tWIfmYe8ku.jpg"
             alt=""
           />
-          <h1>Summer's Best Bites</h1>
-          <p>Light, craveable, and made to pair with every summer sip</p>
+          <h1
+            style={{
+              color: "#00582f",
+            }}
+          >
+            Summer's Best Bites
+          </h1>
+          <p
+            style={{
+              color: "#04914f",
+            }}
+          >
+            Light, craveable, and made to pair with every summer sip
+          </p>
           <Button
             color="#00582f"
             background="none"
@@ -32,8 +44,20 @@ function App() {
             src="src\assets\VrLAsYNx1zQQICVTBtquL2iXNyUrvWqwc4IPFNyP.jpg"
             alt=""
           />
-          <h1>Your Summer, In a Cup</h1>
-          <p>Cool, refreshing favorites for every carefree moment</p>
+          <h1
+            style={{
+              color: "#00582f",
+            }}
+          >
+            Your Summer, In a Cup
+          </h1>
+          <p
+            style={{
+              color: "#04914f",
+            }}
+          >
+            Cool, refreshing favorites for every carefree moment
+          </p>
           <Button
             color="#00582f"
             background="none"
@@ -47,8 +71,20 @@ function App() {
             src="src\assets\6DKSJeTaGzO7KNVhSyVuWYKkgPERWh5DELCtkY0h.jpg"
             alt=""
           />
-          <h1>Taste Like Summer</h1>
-          <p>Fun, fruity finds to carry you through the season</p>
+          <h1
+            style={{
+              color: "#00582f",
+            }}
+          >
+            Taste Like Summer
+          </h1>
+          <p
+            style={{
+              color: "#04914f",
+            }}
+          >
+            Fun, fruity finds to carry you through the season
+          </p>
           <Button
             color="#00582f"
             background="none"

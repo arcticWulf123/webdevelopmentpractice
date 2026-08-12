@@ -1,3 +1,5 @@
+import { FaFacebookF, FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6";
+
 function Footer() {
   return (
     <>
@@ -92,6 +94,27 @@ function Footer() {
         >
           STARBUCKS®
         </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          gap: "15px",
+          padding: "0 30px",
+          marginTop: "20px",
+        }}
+      >
+        <a href="#" className="social-icon" aria-label="Facebook">
+          <FaFacebookF />
+        </a>
+        <a href="#" className="social-icon" aria-label="Instagram">
+          <FaInstagram />
+        </a>
+        <a href="#" className="social-icon" aria-label="X">
+          <FaXTwitter />
+        </a>
+        <a href="#" className="social-icon" aria-label="YouTube">
+          <FaYoutube />
+        </a>
       </div>
       <footer
         style={{

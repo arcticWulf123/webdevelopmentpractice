@@ -163,6 +163,23 @@ ol {
   color: black;
 }
 
-.second-footerlinks:hover {
+.second-footer-links:hover {
   color: rgb(117, 116, 116);
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+}
+
+.social-icon:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
 }
