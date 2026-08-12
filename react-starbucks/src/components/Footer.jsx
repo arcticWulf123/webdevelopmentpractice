@@ -85,6 +85,7 @@ function Footer() {
         <div
           style={{
             writingMode: "vertical-rl",
+            textOrientation: "sideways",
             fontWeight: "bold",
             fontSize: "1.5rem",
             color: "black",
