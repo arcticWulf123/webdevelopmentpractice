@@ -46,6 +46,7 @@ select {
 .header-link {
   color: rgb(68, 66, 66);
   letter-spacing: 1px;
+  font-size: 1.6rem;
 }
 
 .header-link:hover {
