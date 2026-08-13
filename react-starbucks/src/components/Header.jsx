@@ -13,6 +13,7 @@ function Header() {
         position: "sticky",
         top: 0,
         zIndex: 100,
+        borderBottom: "1px solid lightgrey"
       }}
     >
       <div
