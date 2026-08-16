@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Menu filter ---
   const filterBtns = document.querySelectorAll('.filter-btn');
   const menuCards = document.querySelectorAll('.menu-card');
-
+  
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));

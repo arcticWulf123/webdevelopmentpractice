@@ -63,5 +63,5 @@ function Footer() {
 /* 
 1. Components are reusable in React
 2. Props act as the "argument" that a function can use
-3. Destructuring is a common practice in React, see function in line 20
+3. Destructuring is a common practice in React, see function in line 26
 */
